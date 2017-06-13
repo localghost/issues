@@ -1,0 +1,93 @@
+
+=INFO REPORT==== 7-Jun-2017::16:46:00 ===
+Starting RabbitMQ 3.6.9 on Erlang 17.4
+Copyright (C) 2007-2016 Pivotal Software, Inc.
+Licensed under the MPL.  See http://www.rabbitmq.com/
+
+=INFO REPORT==== 7-Jun-2017::16:46:00 ===
+node           : rabbit@localhost
+home dir       : /opt/bitnami/rabbitmq/.rabbitmq
+config file(s) : /opt/bitnami/rabbitmq/etc/rabbitmq/rabbitmq.config
+cookie hash    : g67M6q2g/0PvYQsO33A9uQ==
+log            : /opt/bitnami/rabbitmq/var/log/rabbitmq/rabbit@localhost.log
+sasl log       : /opt/bitnami/rabbitmq/var/log/rabbitmq/rabbit@localhost-sasl.log
+database dir   : /opt/bitnami/rabbitmq/var/lib/rabbitmq/mnesia/rabbit@localhost
+
+=INFO REPORT==== 7-Jun-2017::16:46:04 ===
+Memory limit set to 3129MB of 7823MB total.
+
+=INFO REPORT==== 7-Jun-2017::16:46:04 ===
+Disk free limit set to 50MB
+
+=INFO REPORT==== 7-Jun-2017::16:46:04 ===
+Limiting to approx 65436 file handles (58890 sockets)
+
+=INFO REPORT==== 7-Jun-2017::16:46:04 ===
+FHC read buffering:  OFF
+FHC write buffering: ON
+
+=INFO REPORT==== 7-Jun-2017::16:46:04 ===
+Database directory at /opt/bitnami/rabbitmq/var/lib/rabbitmq/mnesia/rabbit@localhost is empty. Initialising from scratch...
+
+=INFO REPORT==== 7-Jun-2017::16:46:05 ===
+Error description:
+   {could_not_start,rabbit,
+       {{table_creation_failed,rabbit_runtime_parameters,
+            [{record_name,runtime_parameters},
+             {attributes,[key,value]},
+             {disc_copies,[rabbit@localhost]}],
+            {system_limit,rabbit_runtime_parameters,
+                {"Failed to create disc table",
+                 {file_error,
+                     "/opt/bitnami/rabbitmq/var/lib/rabbitmq/mnesia/rabbit@localhost/rabbit_runtime_parameters.DCD",
+                     enoent}}}},
+        {rabbit,start,[normal,[]]}}}
+
+Log files (may contain more information):
+   /opt/bitnami/rabbitmq/var/log/rabbitmq/rabbit@localhost.log
+   /opt/bitnami/rabbitmq/var/log/rabbitmq/rabbit@localhost-sasl.log
+
+
+=INFO REPORT==== 7-Jun-2017::16:46:09 ===
+Starting RabbitMQ 3.6.9 on Erlang 17.4
+Copyright (C) 2007-2016 Pivotal Software, Inc.
+Licensed under the MPL.  See http://www.rabbitmq.com/
+
+=INFO REPORT==== 7-Jun-2017::16:46:09 ===
+node           : rabbit@localhost
+home dir       : /opt/bitnami/rabbitmq/.rabbitmq
+config file(s) : /opt/bitnami/rabbitmq/etc/rabbitmq/rabbitmq.config
+cookie hash    : g67M6q2g/0PvYQsO33A9uQ==
+log            : /opt/bitnami/rabbitmq/var/log/rabbitmq/rabbit@localhost.log
+sasl log       : /opt/bitnami/rabbitmq/var/log/rabbitmq/rabbit@localhost-sasl.log
+database dir   : /opt/bitnami/rabbitmq/var/lib/rabbitmq/mnesia/rabbit@localhost
+
+=INFO REPORT==== 7-Jun-2017::16:46:13 ===
+Memory limit set to 3129MB of 7823MB total.
+
+=INFO REPORT==== 7-Jun-2017::16:46:13 ===
+Disk free limit set to 50MB
+
+=INFO REPORT==== 7-Jun-2017::16:46:13 ===
+Limiting to approx 65436 file handles (58890 sockets)
+
+=INFO REPORT==== 7-Jun-2017::16:46:13 ===
+FHC read buffering:  OFF
+FHC write buffering: ON
+
+=INFO REPORT==== 7-Jun-2017::16:46:13 ===
+Error description:
+   {could_not_start,rabbit,
+       {{schema_integrity_check_failed,
+            [{table_missing,rabbit_exchange_serial},
+             {table_missing,rabbit_runtime_parameters},
+             {table_missing,rabbit_durable_queue},
+             {table_missing,rabbit_queue},
+             {table_missing,gm_group},
+             {table_missing,mirrored_sup_childspec}]},
+        {rabbit,start,[normal,[]]}}}
+
+Log files (may contain more information):
+   /opt/bitnami/rabbitmq/var/log/rabbitmq/rabbit@localhost.log
+   /opt/bitnami/rabbitmq/var/log/rabbitmq/rabbit@localhost-sasl.log
+

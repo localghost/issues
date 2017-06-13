@@ -1,0 +1,35 @@
+[0m
+[0m[1mWelcome to the Bitnami rabbitmq container[0m
+[0mSubscribe to project updates by watching [1mhttps://github.com/bitnami/bitnami-docker-rabbitmq[0m
+[0mSubmit issues and feature requests at [1mhttps://github.com/bitnami/bitnami-docker-rabbitmq/issues[0m
+[0mSend us your feedback at [1mcontainers@bitnami.com[0m
+[0m
+nami    INFO  Initializing rabbitmq
+rabbitm INFO  Creating RabbitMQ System User...
+rabbitm INFO  Setting RabbitMQ environment...
+rabbitm INFO  Setting Erlang cookie...
+rabbitm INFO  Managing RabbitMQ plugins...
+rabbitm INFO  Configuring RabbitMQ permissions...
+rabbitm INFO  Starting RabbitMQ node rabbit@localhost...
+rabbitm INFO  Configuring RabbitMQ permissions...
+rabbitm INFO 
+rabbitm INFO  ########################################################################
+rabbitm INFO   Installation parameters for rabbitmq:
+rabbitm INFO     Username: user
+rabbitm INFO     Node: rabbit@localhost
+rabbitm INFO     Manager listening at: 0.0.0.0:15672
+rabbitm INFO   (Passwords are not shown for security reasons)
+rabbitm INFO  ########################################################################
+rabbitm INFO 
+nami    INFO  rabbitmq successfully initialized
+[0m[38;5;2mINFO [0m ==> Starting rabbitmq...
+             {table_missing,rabbit_runtime_parameters},
+             {table_missing,rabbit_durable_queue},
+             {table_missing,rabbit_queue},
+             {table_missing,gm_group},
+             {table_missing,mirrored_sup_childspec}]},
+        {rabbit,start,[normal,[]]}}}
+
+Log files (may contain more information):
+   /opt/bitnami/rabbitmq/var/log/rabbitmq/rabbit@localhost.log
+   /opt/bitnami/rabbitmq/var/log/rabbitmq/rabbit@localhost-sasl.log
