@@ -1,0 +1,8 @@
+.drbdctrl role:Secondary
+  volume:0 disk:Inconsistent
+  volume:1 disk:Inconsistent
+  node-10-9-4-216 connection:Connecting
+  node-10-9-4-231 role:Secondary
+    volume:0 peer-disk:Inconsistent
+    volume:1 peer-disk:Inconsistent
+

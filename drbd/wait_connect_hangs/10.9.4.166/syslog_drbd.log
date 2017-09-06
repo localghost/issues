@@ -1,0 +1,184 @@
+Sep  5 11:28:14 localhost ansible-yum: Invoked with name=['http://albatros/bdc/drbd/rpms/20170905/drbd-utils-9.1.0-1.el7.centos.x86_64.rpm', 'http://albatros/bdc/drbd/rpms/20170905/drbd-pacemaker-9.1.0-1.el7.centos.x86_64.rpm', 'http://albatros/bdc/drbd/rpms/20170905/drbd-udev-9.1.0-1.el7.centos.x86_64.rpm', 'http://albatros/bdc/drbd/rpms/20170905/drbd-xen-9.1.0-1.el7.centos.x86_64.rpm', 'http://albatros/bdc/drbd/rpms/20170905/drbd-bash-completion-9.1.0-1.el7.centos.x86_64.rpm', 'http://albatros/bdc/drbd/rpms/20170905/drbd-9.1.0-1.el7.centos.x86_64.rpm', 'http://albatros/bdc/drbd/rpms/20170905/drbd-heartbeat-9.1.0-1.el7.centos.x86_64.rpm', 'http://albatros/bdc/drbd/rpms/20170905/kmod-drbd-9.0.9_3.10.0_327-1.el7.centos.x86_64.rpm', 'http://albatros/bdc/drbd/rpms/20170905/drbdmanage-0.99.10-1.noarch.rpm'] list=None install_repoquery=True conf_file=None disable_gpg_check=False state=present disablerepo=None update_cache=False enablerepo=None exclude=None validate_certs=True installroot=/ skip_broken=False
+Sep  5 11:28:22 localhost yum[5414]: Installed: drbd-utils-9.1.0-1.el7.centos.x86_64
+Sep  5 11:28:22 localhost yum[5414]: Installed: drbd-pacemaker-9.1.0-1.el7.centos.x86_64
+Sep  5 11:28:22 localhost yum[5414]: Installed: drbd-udev-9.1.0-1.el7.centos.x86_64
+Sep  5 11:28:22 localhost yum[5414]: Installed: drbd-bash-completion-9.1.0-1.el7.centos.x86_64
+Sep  5 11:28:22 localhost yum[5414]: Installed: drbd-xen-9.1.0-1.el7.centos.x86_64
+Sep  5 11:28:23 localhost yum[5414]: Installed: drbdmanage-0.99.10-1.noarch
+Sep  5 11:28:23 localhost yum[5414]: Installed: drbd-9.1.0-1.el7.centos.x86_64
+Sep  5 11:28:23 localhost yum[5414]: Installed: drbd-heartbeat-9.1.0-1.el7.centos.x86_64
+Sep  5 11:28:55 localhost yum[5414]: Installed: kmod-drbd-9.0.9_3.10.0_327-1.el7.centos.x86_64
+Sep  5 11:28:55 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=rpm -ivh --nodeps http://albatros/bdc/drbd/rpms/20170905/drbdmanage-docker-volume-0.7.1-1.noarch.rpm removes=None creates=None chdir=None
+Sep  5 11:28:56 localhost ansible-blockinfile: Invoked with directory_mode=None force=None remote_src=None insertafter=None path=/etc/drbdmanaged.cfg owner=None follow=False marker=# {mark} ANSIBLE MANAGED BLOCK group=None insertbefore=None unsafe_writes=None create=True state=present content=None serole=None setype=None selevel=None regexp=None validate=None src=None seuser=None delimiter=None mode=None attributes=None backup=False block=[LOCAL]#012drbdctrl-vg = vg00
+Sep  5 11:28:56 localhost ansible-systemd: Invoked with no_block=False name=docker-drbdmanage-plugin enabled=True daemon_reload=False state=started user=False masked=None
+Sep  5 11:28:56 localhost systemd: Listening on DRBDmanage Docker Volume Plugin.
+Sep  5 11:28:56 localhost systemd: Starting DRBDmanage Docker Volume Plugin.
+Sep  5 11:28:57 localhost systemd: Started DRBDmanage Docker Volume Plugin.
+Sep  5 11:28:57 localhost systemd: Starting DRBDmanage Docker Volume Plugin...
+Sep  5 11:28:57 localhost dbus[555]: [system] Activating service name='org.drbd.drbdmanaged' (using servicehelper)
+Sep  5 11:28:57 localhost dbus-daemon: dbus[555]: [system] Activating service name='org.drbd.drbdmanaged' (using servicehelper)
+Sep  5 11:28:57 localhost drbdmanaged[14200]: INFO       DRBDmanage server, version 0.99.10 -- initializing on node 'node-10-9-4-166'
+Sep  5 11:28:57 localhost dbus[555]: [system] Successfully activated service 'org.drbd.drbdmanaged'
+Sep  5 11:28:57 localhost drbdmanaged[14200]: INFO       DrbdAdm: Running external command: drbdadm -vvv adjust .drbdctrl
+Sep  5 11:28:57 localhost dbus-daemon: dbus[555]: [system] Successfully activated service 'org.drbd.drbdmanaged'
+Sep  5 11:28:57 localhost drbdmanaged[14200]: ERROR      DrbdAdm: External command 'drbdadm': Exit code 1
+Sep  5 11:28:57 localhost drbdmanaged[14200]: ERROR      drbdadm/stderr: no resources defined!
+Sep  5 11:28:57 localhost kernel: drbd: module verification failed: signature and/or required key missing - tainting kernel
+Sep  5 11:28:57 localhost kernel: drbd: initialized. Version: 9.0.9-1 (api:2/proto:86-112)
+Sep  5 11:28:57 localhost kernel: drbd: GIT-hash: f7b979e7af01813e031aac579140237640c94569 build by packer@localhost.localdomain, 2017-09-05 10:31:29
+Sep  5 11:28:57 localhost kernel: drbd: registered as block device major 147
+Sep  5 11:28:57 localhost dbus-daemon: .drbdctrl: No such resource
+Sep  5 11:28:57 localhost dbus-daemon: # No currently configured DRBD found.
+Sep  5 11:28:57 localhost drbdmanaged[14200]: INFO       DRBDManage starting as satellite node
+Sep  5 11:28:57 localhost drbdmanaged[14200]: ERROR      drbdsetup events tracing has failed, restarting
+Sep  5 11:28:57 localhost drbdmanaged[14200]: INFO       drbdsetup events tracing reestablished
+Sep  5 11:28:57 localhost drbdmanaged[14200]: INFO       Reading initial DRBD control volume status
+Sep  5 11:28:57 localhost drbdmanaged[14200]: INFO       Finished reading initial DRBD control volume status
+Sep  5 11:29:01 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=drbdmanage join -p 6999 10.9.4.166 1 node-10-9-4-216 10.9.4.216 0 1IlcwhV9CRtCM5BZmm+l -q removes=None creates=None chdir=None
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl: Starting worker thread (from drbdsetup [14312])
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/0 drbd0: disk( Diskless -> Attaching )
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/0 drbd0: Maximum number of peer devices = 31
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl: Method to ensure write ordering: flush
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/0 drbd0: Adjusting my ra_pages to backing device's (32 -> 1024)
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/0 drbd0: drbd_bm_resize called with capacity == 8112
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/0 drbd0: resync bitmap: bits=1014 words=496 pages=1
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/0 drbd0: recounting of set bits took additional 0ms
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/0 drbd0: disk( Attaching -> Inconsistent )
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/0 drbd0: attached to current UUID: 0000000000000004
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/1 drbd1: disk( Diskless -> Attaching )
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/1 drbd1: Maximum number of peer devices = 31
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/1 drbd1: Adjusting my ra_pages to backing device's (32 -> 1024)
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/1 drbd1: drbd_bm_resize called with capacity == 8112
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/1 drbd1: resync bitmap: bits=1014 words=496 pages=1
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/1 drbd1: recounting of set bits took additional 0ms
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/1 drbd1: disk( Attaching -> Inconsistent )
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl/1 drbd1: attached to current UUID: 0000000000000004
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Starting sender thread (from drbdsetup [14330])
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( StandAlone -> Unconnected )
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Starting receiver thread (from drbd_w_.drbdctr [14313])
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( Unconnected -> Connecting )
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Handshake to peer 0 successful: Agreed network protocol version 112
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Feature flags enabled on protocol level: 0x7 TRIM THIN_RESYNC WRITE_SAME.
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Peer authenticated using 32 bytes HMAC
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Starting ack_recv thread (from drbd_r_.drbdctr [14337])
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Preparing remote state change 3785290307 (primary_nodes=0, weak_nodes=0)
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl: State change failed: Peer may not become primary while device is opened read-only
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Failed: conn( Connecting -> Connected ) peer( Unknown -> Primary )
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Aborting remote state change 3785290307
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: sock was shut down by peer
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( Connecting -> BrokenPipe )
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: ack_receiver terminated
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Terminating ack_recv thread
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Connection closed
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( BrokenPipe -> Unconnected )
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: Restarting receiver thread
+Sep  5 11:29:02 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( Unconnected -> Connecting )
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: Handshake to peer 0 successful: Agreed network protocol version 112
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: Feature flags enabled on protocol level: 0x7 TRIM THIN_RESYNC WRITE_SAME.
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: Peer authenticated using 32 bytes HMAC
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: Starting ack_recv thread (from drbd_r_.drbdctr [14337])
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: Preparing remote state change 255890997 (primary_nodes=0, weak_nodes=0)
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl: State change failed: Peer may not become primary while device is opened read-only
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: Failed: conn( Connecting -> Connected ) peer( Unknown -> Primary )
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: Aborting remote state change 255890997
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: sock was shut down by peer
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( Connecting -> BrokenPipe )
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: ack_receiver terminated
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: Terminating ack_recv thread
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: Connection closed
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( BrokenPipe -> Unconnected )
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: Restarting receiver thread
+Sep  5 11:29:03 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( Unconnected -> Connecting )
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Handshake to peer 0 successful: Agreed network protocol version 112
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Feature flags enabled on protocol level: 0x7 TRIM THIN_RESYNC WRITE_SAME.
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Peer authenticated using 32 bytes HMAC
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Starting ack_recv thread (from drbd_r_.drbdctr [14337])
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Preparing remote state change 4185636038 (primary_nodes=0, weak_nodes=0)
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl: State change failed: Peer may not become primary while device is opened read-only
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Failed: conn( Connecting -> Connected ) peer( Unknown -> Primary )
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Aborting remote state change 4185636038
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: sock was shut down by peer
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( Connecting -> BrokenPipe )
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: ack_receiver terminated
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Terminating ack_recv thread
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Connection closed
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( BrokenPipe -> Unconnected )
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Restarting receiver thread
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( Unconnected -> Connecting )
+Sep  5 11:29:04 localhost drbdmanaged[14200]: INFO       DrbdAdm: Running external command: drbdadm -vvv adjust .drbdctrl
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-231: Starting sender thread (from drbdsetup [14363])
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-231: conn( StandAlone -> Unconnected )
+Sep  5 11:29:04 localhost drbdmanaged[14200]: INFO       DrbdAdm: External command 'drbdadm': Exit code 0
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-231: Starting receiver thread (from drbd_w_.drbdctr [14313])
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-231: conn( Unconnected -> Connecting )
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Handshake to peer 0 successful: Agreed network protocol version 112
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Feature flags enabled on protocol level: 0x7 TRIM THIN_RESYNC WRITE_SAME.
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Authentication of peer failed
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( Connecting -> Disconnecting )
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Connection closed
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( Disconnecting -> StandAlone )
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-216: Terminating receiver thread
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-231: Handshake to peer 2 successful: Agreed network protocol version 112
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-231: Feature flags enabled on protocol level: 0x7 TRIM THIN_RESYNC WRITE_SAME.
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-231: Authentication of peer failed
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-231: conn( Connecting -> Disconnecting )
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-231: Connection closed
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-231: conn( Disconnecting -> StandAlone )
+Sep  5 11:29:04 localhost kernel: drbd .drbdctrl node-10-9-4-231: Terminating receiver thread
+Sep  5 11:29:06 localhost drbdmanaged[14200]: INFO       DrbdAdm: Running external command: drbdadm -vvv secondary .drbdctrl
+Sep  5 11:29:06 localhost drbdmanaged[14200]: INFO       DrbdAdm: External command 'drbdadm': Exit code 0
+Sep  5 11:29:06 localhost drbdmanaged[14200]: INFO       DrbdAdm: Running external command: drbdadm -vvv down .drbdctrl
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl node-10-9-4-216: Terminating sender thread
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl node-10-9-4-231: Terminating sender thread
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/0 drbd0: disk( Inconsistent -> Detaching )
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/0 drbd0: disk( Detaching -> Diskless )
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/0 drbd0: drbd_bm_resize called with capacity == 0
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/1 drbd1: disk( Inconsistent -> Detaching )
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/1 drbd1: disk( Detaching -> Diskless )
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/1 drbd1: drbd_bm_resize called with capacity == 0
+Sep  5 11:29:06 localhost drbdmanaged[14200]: INFO       DrbdAdm: External command 'drbdadm': Exit code 0
+Sep  5 11:29:06 localhost drbdmanaged[14200]: INFO       DrbdAdm: Running external command: drbdadm -vvv adjust .drbdctrl
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl node-10-9-4-231: Starting sender thread (from drbdsetup [14378])
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl node-10-9-4-216: Starting sender thread (from drbdsetup [14380])
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/0 drbd0: disk( Diskless -> Attaching )
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/0 drbd0: Maximum number of peer devices = 31
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/0 drbd0: Adjusting my ra_pages to backing device's (32 -> 1024)
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/0 drbd0: drbd_bm_resize called with capacity == 8112
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/0 drbd0: resync bitmap: bits=1014 words=496 pages=1
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/0 drbd0: recounting of set bits took additional 0ms
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/0 drbd0: disk( Attaching -> Inconsistent )
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/0 drbd0: attached to current UUID: 0000000000000004
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/1 drbd1: disk( Diskless -> Attaching )
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/1 drbd1: Maximum number of peer devices = 31
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/1 drbd1: drbd_bm_resize called with capacity == 8112
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/1 drbd1: resync bitmap: bits=1014 words=496 pages=1
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/1 drbd1: recounting of set bits took additional 0ms
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/1 drbd1: disk( Attaching -> Inconsistent )
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl/1 drbd1: attached to current UUID: 0000000000000004
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl node-10-9-4-231: conn( StandAlone -> Unconnected )
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl node-10-9-4-231: Starting receiver thread (from drbd_w_.drbdctr [14313])
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl node-10-9-4-231: conn( Unconnected -> Connecting )
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( StandAlone -> Unconnected )
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl node-10-9-4-216: Starting receiver thread (from drbd_w_.drbdctr [14313])
+Sep  5 11:29:06 localhost kernel: drbd .drbdctrl node-10-9-4-216: conn( Unconnected -> Connecting )
+Sep  5 11:29:06 localhost drbdmanaged[14200]: INFO       DrbdAdm: External command 'drbdadm': Exit code 0
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl node-10-9-4-231: Handshake to peer 2 successful: Agreed network protocol version 112
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl node-10-9-4-231: Feature flags enabled on protocol level: 0x7 TRIM THIN_RESYNC WRITE_SAME.
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl node-10-9-4-231: Peer authenticated using 32 bytes HMAC
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl node-10-9-4-231: Starting ack_recv thread (from drbd_r_.drbdctr [14394])
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl: Preparing cluster-wide state change 2976146281 (1->2 499/146)
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl: State change 2976146281: primary_nodes=0, weak_nodes=0
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl: Committing cluster-wide state change 2976146281 (0ms)
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl node-10-9-4-231: conn( Connecting -> Connected ) peer( Unknown -> Secondary )
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl/0 drbd0 node-10-9-4-231: drbd_sync_handshake:
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl/0 drbd0 node-10-9-4-231: self 0000000000000004:0000000000000000:0000000000000000:0000000000000000 bits:0 flags:24
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl/0 drbd0 node-10-9-4-231: peer 0000000000000004:0000000000000000:0000000000000000:0000000000000000 bits:0 flags:24
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl/0 drbd0 node-10-9-4-231: uuid_compare()=0 by rule 10
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl/0 drbd0 node-10-9-4-231: pdsk( DUnknown -> Inconsistent ) repl( Off -> Established )
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl/1 drbd1 node-10-9-4-231: drbd_sync_handshake:
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl/1 drbd1 node-10-9-4-231: self 0000000000000004:0000000000000000:0000000000000000:0000000000000000 bits:0 flags:24
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl/1 drbd1 node-10-9-4-231: peer 0000000000000004:0000000000000000:0000000000000000:0000000000000000 bits:0 flags:24
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl/1 drbd1 node-10-9-4-231: uuid_compare()=0 by rule 10
+Sep  5 11:29:07 localhost kernel: drbd .drbdctrl/1 drbd1 node-10-9-4-231: pdsk( DUnknown -> Inconsistent ) repl( Off -> Established )
+Sep  5 11:29:07 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=drbdadm adjust all removes=None creates=None chdir=None
+Sep  5 11:29:07 localhost ansible-command: Invoked with warn=True executable=None _uses_shell=False _raw_params=drbdadm wait-connect .drbdctrl removes=None creates=None chdir=None

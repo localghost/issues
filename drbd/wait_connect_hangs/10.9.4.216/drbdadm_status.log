@@ -1,0 +1,6 @@
+.drbdctrl role:Primary
+  volume:0 disk:UpToDate
+  volume:1 disk:UpToDate
+  node-10-9-4-166 connection:StandAlone
+  node-10-9-4-231 connection:StandAlone
+
