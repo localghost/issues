@@ -1,0 +1,8 @@
+.drbdctrl role:Primary
+  volume:0 disk:UpToDate
+  volume:1 disk:UpToDate
+  node-10-9-4-137 role:Secondary
+    volume:0 peer-disk:UpToDate
+    volume:1 peer-disk:UpToDate
+  node-10-9-4-192 connection:StandAlone
+

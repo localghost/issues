@@ -1,0 +1,40 @@
+resource .drbdctrl {
+    _this_host {
+        node-id			0;
+        volume 0 {
+            device			minor 0;
+            disk			"/dev/vg00/.drbdctrl_0";
+            meta-disk			internal;
+        }
+        volume 1 {
+            device			minor 1;
+            disk			"/dev/vg00/.drbdctrl_1";
+            meta-disk			internal;
+        }
+    }
+    connection {
+        _peer_node_id 1;
+        path {
+            _this_host ipv4 10.9.4.119:6999;
+            _remote_host ipv4 10.9.4.137:6999;
+        }
+        net {
+            cram-hmac-alg   	"sha256";
+            shared-secret   	"9KBwvs6/UaGG3KYR9f+O";
+            _name           	"node-10-9-4-137";
+        }
+    }
+    connection {
+        _peer_node_id 2;
+        path {
+            _this_host ipv4 10.9.4.119:6999;
+            _remote_host ipv4 10.9.4.192:6999;
+        }
+        net {
+            cram-hmac-alg   	"sha256";
+            shared-secret   	"9KBwvs6/UaGG3KYR9f+O";
+            _name           	"node-10-9-4-192";
+        }
+    }
+}
+
